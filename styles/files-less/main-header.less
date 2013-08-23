@@ -1,0 +1,221 @@
+/* --------------------------------------------------------------header start */
+
+.header-content {
+  padding: 10px 10px 0;
+  width: 960px - 20px;  
+  height: 120px - 10px;
+  margin: 0 auto;
+} /*.header-content*/
+
+.header-top-menu, 
+.header-lang-menu, 
+.header-main-menu{ 
+  .noMargin; .noPadding; 
+  list-style-type: none; 
+  &>li{ .disBlock; .flLeft; } 
+}
+
+.header-top-menu {
+  .flRight; margin: -10px 0 0;
+  &>li{
+    margin-left: 1px;
+    &:first-child { margin-left: 0; }
+    &>a{
+      .disBlock;
+      padding: 7px 9px;
+      background-color: @color-gray;
+      font: normal 13px/1 @font-arial;
+      color: @color-black;
+      text-decoration: none;
+      .transition(background, .8s, ease);
+      
+      &:hover { text-decoration: underline; }
+      &.active{ text-decoration: underline;}
+    }
+  }
+}
+
+.header-lang-menu {
+  .flRight; margin: -10px 0 0;
+  &>li{
+    &>a{
+      .disBlock;
+      padding: 7px 9px;
+      background-color: @color-vinous;
+      font: normal 13px/1 @font-arial;
+      color: @color-white;
+      text-decoration: underline;
+      text-transform: uppercase;
+      .transition(background, .8s, ease);
+
+      &:hover { text-decoration: none; }
+      &.active{ background-color: @color-vinous-dark; text-decoration: none;}
+    }
+  }
+}
+
+.header-logo{
+  .disBlock; .flLeft;
+  width: 220px; height: 82px;
+  /*margin: -17px 10px 0 0;*/
+  margin: -17px 0 0 0;
+  border: none; outline: none;
+  background: url("@{base-url}img-logotyp.jpg") center center no-repeat;
+}
+
+.header-main-menu {
+  .flRight; 
+  /*margin: 15px 10px 0 0;
+  width: 700px;*/
+  margin: 15px 0 0 0;
+  width: 710px;
+  &>li{
+    .posRel; .noPadding;
+    /*margin: 0 0 0 6px;*/
+    margin: 0 0 0 5px;
+    ul { .disNone; }
+    &:first-child{ margin-left: 0px; }
+    &>a{
+      .disBlock;
+      padding: 8px 18px 8px 8px; .noMargin;
+      font: normal 14px/1.2 @font-arial;
+      color: @color-gray-darker;
+      text-decoration: none;
+      .transition(all, .8s, ease);
+      &:hover{ color: @color-vinous; }
+    }
+
+    &:first-child a{ margin-left: 0px; }
+    
+    &.dropdown {
+      &>a:after{
+        content: '';
+        .disBlock; .posAbs;
+        top: 12px; right: 7px;  
+        width: 5px; height: 5px;
+        border-right: 1px solid @color-gray-darker;
+        border-bottom: 1px solid @color-gray-darker;
+        background: transparent;
+        .rotate(45deg);
+      }
+      &>a:hover:after { border-color: @color-vinous; }
+      &:hover {
+        &>.dropdown-sub-menu{ .disBlock; }
+        /* когда находимся в подменю родительская ссылка также выделена */
+        & > a { color: @color-vinous; &:after { border-color: @color-vinous; } }
+      }
+      
+      &>.dropdown-sub-menu{
+        .disNone; list-style-type: none;
+        background-color: @color-white;
+        .posAbs; top: 32px; left: 50%;
+        margin: 0 0 0 -((140px+20px)/2); padding: 10px; 
+        z-index: 1;
+        &>li{ 
+          .disBlock;
+          a {
+            .disBlock; .noMargin;
+            padding: 7px 8px 4px;
+            width: 140px - 16px;
+            font: normal 14px/1.2 @font-arial;
+            color: @color-gray-darker;
+            text-decoration: none;
+            .transition(background, .8s, ease);
+            &:hover{ 
+              text-decoration: none; 
+              background-color: lighten(@color-vinous-lighter, 25%); 
+            }
+          }
+        }
+      } /*.dropdown-sub-menu*/
+      
+      &.diff{
+        &:hover {
+          &>.dropdown-sub-menu{ .disBlock; }
+          /* когда находимся в подменю родительская ссылка также выделена */
+          & > a { background-color: darken(@color-gray-lighter, 2%); }
+        }
+
+        & > a{
+          &:hover{ background-color: darken(@color-gray-lighter, 2%); }
+        }
+
+        &>.dropdown-sub-menu{
+          .disNone; list-style-type: none;
+          background-color: transparent;
+          .posAbs; top: 34px; right: 0px; left: auto;
+          width: 350px;
+          .noPadding;  .noMargin;
+          font-size: 0px; line-height: 0px; letter-spacing: -1px;
+          text-align: right;
+          z-index: 1;
+          &>li{
+            .inlineBlock;
+            .noPadding;
+            margin: -1px -1px 0 0;
+            border: 1px solid @color-white;
+            letter-spacing: normal;
+            a {
+              .noMargin;
+              padding: 8px 18px;
+              width: auto;            
+              font: normal 14px/1.2 @font-arial;
+              color: @color-vinous;
+              text-decoration: none;
+              background-color: darken(@color-gray-lighter, 2%);
+              .transition(background, .8s, ease);
+              &:hover{ 
+                text-decoration: underline;
+                background-color: darken(@color-gray-lighter, 10%);
+              }
+            }
+          } /*li*/
+          
+          &.v2{
+            right: -250px; width: 660px;
+            &>li a {
+              padding: 8px 8px;
+              text-decoration: none;
+              color: @color-white;
+              background-color: darken(@color-gray-lighter, 2%);
+              .transition(color, .8s, linear);
+              &:hover {
+                text-decoration: none;
+                color: @color-vinous;
+                background-color: darken(@color-gray-lighter, 2%);
+              }
+            }
+          } /*.v2*/
+
+        } /*.dropdown-sub-menu*/
+      } /*.diff*/
+
+    } /*.dropdown*/
+
+    &.active, &:hover{
+      a { color: @color-vinous; }
+      &.dropdown a:after{ border-color: @color-vinous; }  
+    }
+  } /*li*/
+} /*.header-main-menu*/
+  
+.breadcrumbs{
+  padding: 14px 20px 16px;
+  height: 40px - 30px;
+  margin: 0 0 0 251px;
+  width: 789px;
+  
+  background-color: darken(@color-gray-lighter, 2%);
+  font: normal 12px/1.2 @font-myriad;
+  color: lighten(@color-gray-light, 15%);
+  
+  a{
+    font: normal 12px/1.2 @font-myriad;
+    color: lighten(@color-gray-light, 15%);
+    text-decoration: none;
+    &:hover{ text-decoration: underline; }
+  }
+  span { color: @color-vinous; }
+} /*.breadcrumbs*/
+
+/* --------------------------------------------------------------header end */

@@ -1,0 +1,46 @@
+/* ---base */
+html {
+	overflow-y: scroll;
+}
+html, body {
+	height: 100%;
+}
+body {
+	line-height: 1;
+	background: #ffffff;
+	color: #373737;
+	text-align: left;
+	font: 12px Arial, Helvetica, "Helvetica CY", "Nimbus Sans L", sans-serif;;
+}
+input, select, button, textarea {
+	font-family: Arial, Helvetica, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+label, input[type="button"], input[type="submit"], button {
+	cursor: pointer;
+}
+
+blockquote, q {
+	quotes: none; 
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: ''; 
+	content: none; 
+}
+
+
+a{
+  text-decoration: underline;
+	outline: none;
+  &:active, &:focus, &:visited, &:hover { outline: none; }
+}
+
+input::-webkit-input-placeholder {color:#666;}
+
+input:focus::-webkit-input-placeholder {color:transparent;}
+input:-moz-placeholder {color:#666;}
+input:-moz-placeholder:focus{color:transparent;}
+input:-ms-input-placeholder {color:#666;}
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+/* ---/base */
