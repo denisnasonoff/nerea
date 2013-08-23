@@ -1,3 +1,4 @@
+И сюда строчечку
 <?php require_once('header.php'); ?>
 
     <div class="main-content">
@@ -6,6 +7,8 @@
         <div class="breadcrumbs">
         	<a href="#">Home</a> &gt; <a href="#">Customer references</a> &gt; <a href="#">Wealth management</a> &gt; <span>Agrium</span>
         </div>
+
+И вот сюда
 
         <div class="column-wrapper">
 
